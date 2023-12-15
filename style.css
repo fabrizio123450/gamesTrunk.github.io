@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+body {
+    font-family: 'Press Start 2P', sans-serif;
+    background-color: black;
+    
+}
+
+h1 {
+    text-align: center;
+    margin-top :5%;
+    color: #1467ac;
+    
+}
+
+#game1{
+    
+    display: block;
+    margin:  5px;
+    margin-left:17%;
+    padding:15px 15px ;
+    font-size: 12px;
+    background-color: #1467ac;
+    color: #050505;
+    border: none;
+    border-radius:5px ;
+    font-family: 'Press Start 2P', sans-serif;
+
+    
+}
+#game2{
+    display: block;
+    margin:  5px;
+    padding:15px 15px ;
+    font-size: 12px;
+    background-color: #1467ac;
+    color: #050505;
+    border: none;
+    border-radius:5px ;
+    font-family: 'Press Start 2P', sans-serif;
+
+    
+    
+}
+#game3{
+    display: block;
+    margin:  5px;
+    padding:15px 15px ;
+    font-size: 12px;
+    background-color: #1467ac;
+    color: #050505;
+    border: none;
+    border-radius:5px ;
+    font-family: 'Press Start 2P', sans-serif;
+
+    
+}
+#game4{
+    display: block;
+    margin:  5px;
+    padding:15px 15px ;
+    font-size: 12px;
+    background-color: #1467ac;
+    color: #050505;
+    border: none;
+    border-radius:5px ;
+    font-family: 'Press Start 2P', sans-serif;
+    
+}
+#contenedor {
+   
+    position: relative;
+}
+#baul {
+    display: flex;
+    margin:auto;
+    background-image: url(frame.jpg);
+    margin-top: 0%;
+    width: 50%;
+    height: 50%;
+    padding: 160px 130px;
+    background-color: #c2b78e;
+    border: none;
+    
+}
+
+#error{
+
+    display: none;
+    margin:5px5px  auto;
+    position: relative;
+    font-size: x-large;
+    
+}
+button:active {
+    transform: scale(0.95);
+}
+
+.mensaje {
+    border: 1px solid black;
+    padding: 3px;
+    margin: 3px;
+    min-width:5px ;
+    text-align: center;
+    display: inline-block
+}
