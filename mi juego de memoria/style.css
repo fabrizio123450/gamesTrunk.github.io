@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+body{
+background-color: black;
+text-align: center;
+font-family: 'Press Start 2P', sans-serif;
+}
+audio{
+    background-color:  rgb(102, 101, 105);
+    margin-top: 5%;
+}
+.grid {
+    
+    margin-left: 35%;
+    display: flex;
+    flex-wrap: wrap;
+    width: 400px;
+    height: 300px;
+  }
