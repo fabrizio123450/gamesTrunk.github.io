@@ -112,11 +112,30 @@ document.addEventListener('DOMContentLoaded', () => {
         elegidasId = []
         //si las cartas elegidas son iguales a todo el mazo, ha ganado
         if (cartasganadoras.length === mazoCartas.length / 2) {
-            elementoPuntaje.textContent = "Felicidades!! haz ganado!! Puntaje: "+puntos;
+            elementoPuntaje.textContent = "Felicidades!! haz ganado!! Puntaje: " + puntos;
+            let nombre = prompt("Cual es tu nombre: ");
             clearInterval(intervaloid);//se detiene el contador de puntaje o  tiempo
+            //guardo el puntaje
+            const saveJson = localStorage.getItem('datos_m');
+            const saveData = saveJson ? JSON.parse(saveJson) : [];
+            saveData.push({ nombre: nombre, tiempo: puntos });
+            localStorage.setItem('datos_m', JSON.stringify(saveData));
+            location.reload();
         }
     }
 
+    function getScore() {
+        let content = "";
+        const saveJson = localStorage.getItem('datos_m');
+        //obtengo mis datos
+        const saveData = saveJson ? JSON.parse(saveJson) : [];
+        //agrego los puntajes al html
+        for (let i = 0; i < saveData.length; i++) {
+            content += "<div class='puntaje'><p>" + saveData[i].nombre + "      " + saveData[i].tiempo + "</p><div>"
+        }
+        document.getElementById("scoreContainer").innerHTML = content;
+        console.log(saveData);
+    }
     //Para dar vuelta las cartas
     function darvuelta() {
         let cartaId = this.getAttribute('data-id')
@@ -127,33 +146,55 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(cartascoinciden, 500)//te muesta medio segundo luego de que coincidan
         }
     }
-//Para volver a la pagina anterior
-const botonVolver = document.getElementById("volver");
-botonVolver.addEventListener ('click', () => {
-    window.location.href = '../index.html';
+    //Para volver a la pagina anterior
+    const botonVolver = document.getElementById("volver");
+    botonVolver.addEventListener('click', () => {
+        window.location.href = '../index.html';
     });
+    //Para el puntaje Scoreeee
+    const modalScore = document.getElementById('scores')
+    const modal2 = document.getElementById('myModal2');
+    const closeModalBtn2 = document.querySelector('.close2');
 
-//Para instrucciones abre una caja con ellas 
-const Instrucciones = document.getElementById('Instrucciones');
-const instruccion = document.getElementById('cajainstrucciones');
-const cerrarpasos = document.querySelector('.cerrar');
-//cuando se hace click
-Instrucciones.addEventListener('click', () => {
-    instruccion.style.display = 'block';
-    clearInterval(intervaloid)
-    
-});
-//para cerrar
-cerrarpasos.addEventListener('click', () => {
-    instruccion.style.display = 'none';
-    intervaloid = setInterval(actualizarPuntaje, 1000);
-});
-//para cerrar cuando se hace click fuera de la caja
-window.addEventListener('click', (event) => {
-    if (event.target === instruccion) {
+    //Para instrucciones abre una caja con ellas 
+    const Instrucciones = document.getElementById('Instrucciones');
+    const instruccion = document.getElementById('cajainstrucciones');
+    const cerrarpasos = document.querySelector('.cerrar');
+    //cuando se hace click
+    Instrucciones.addEventListener('click', () => {
+        instruccion.style.display = 'block';
+        clearInterval(intervaloid)
+
+    });
+    //PUNTAJE EN MODAL
+    modalScore.addEventListener('click', () => {
+        getScore();
+        modal2.style.display = 'block';
+
+    });
+    //CIEROO MODAL PUNTAJE
+    closeModalBtn2.addEventListener('click', () => {
+        modal2.style.display = 'none';
+    });
+    //para cerrar
+    cerrarpasos.addEventListener('click', () => {
         instruccion.style.display = 'none';
-    }
-});
+        intervaloid = setInterval(actualizarPuntaje, 1000);
+    });
+    //para cerrar cuando se hace click fuera de la caja
+    window.addEventListener('click', (event) => {
+        if (event.target === instruccion || event.target === modal2) {
+            instruccion.style.display = 'none';
+        }
+    });
 
     crearmazo()//empieza el juego creando el mazo
 })
+let juegoEnCurso = false;
+document.addEventListener('keydown', (e) => {
+    if (e.key === "Enter" && !juegoEnCurso) {
+        document.getElementById("start").style.display = "none";
+        document.getElementById("game").style.display = "block";
+        juegoEnCurso = true;
+    }
+});

@@ -2,36 +2,44 @@
 <html lang="en" dir="ltr">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Juego de memoria</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" charset="utf-8"></script>
+  <meta charset="UTF-8">
+  <title>Juego de memoria</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" charset="utf-8"></script>
 </head>
+
 <body>
+  <div id="game">
     <h1 id="puntaje">Puntaje: 60 </h1></span></h1>
-    <style>
-        h1 {
-            font-size: 2em;
-            color: rgb(175, 165, 221);
-        }
-    </style>
-    <div class="grid">
+    <div class="grid"></div>
+  </div>
 
-    </div>
-    <button id="volver">⇦Volver</button>
-
+  <div id="start">
+    <h1>Bienvenido a Memori</h1>
+    <p id="mensaje">Pulsa Enter para comenzar</p>
+    <button id="volver">⇦Atras</button>
     <button id="Instrucciones">?</button>
     <div id="cajainstrucciones" class="instruccion">
-    <div class="pasos-instrucciones">
-      <span class="cerrar">&times;</span>
-      <h2>Instrucciones: </h2>
-      <p>-Usted puede girar dos cartas por vez haciendo click en dos lugares del mazo</p>
-      <p>-Cuando selecione dos cartas iguales estan van a desaparecer del mazo</p>
-      <p>-Tiene un minuto para hacer desaparecer todo el mazo</p>
-      <p>-Para ello tendra que recordar los lugares donde se encontraban cada carta</p>
-      <p>-Perdera si no logra hacer desaparecer el mazo en 1 minuto</p>
+      <div class="pasos-instrucciones">
+        <span class="cerrar">&times;</span>
+        <h2>Instrucciones: </h2>
+        <p>-Usted puede girar dos cartas por vez haciendo click en dos lugares del mazo</p>
+        <p>-Cuando selecione dos cartas iguales estan van a desaparecer del mazo</p>
+        <p>-Tiene un minuto para hacer desaparecer todo el mazo</p>
+        <p>-Para ello tendra que recordar los lugares donde se encontraban cada carta</p>
+        <p>-Perdera si no logra hacer desaparecer el mazo en 1 minuto</p>
+      </div>
     </div>
+    <button id="scores">Puntaje</button>
+    <div id="myModal2" class="modal2">
+			<div class="modal-content2">
+				<span class="close2">&times;</span>
+				<h2>PUNTAJES</h2>
+				<div id="scoreContainer"></div>
+			  </div>
+		</div>
   </div>
+
 </body>
 
 </html>

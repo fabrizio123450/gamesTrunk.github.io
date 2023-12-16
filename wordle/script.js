@@ -37,7 +37,10 @@ const htmPalabra = document.getElementById('palabra');
 const campos = document.querySelectorAll('.campo');
 const keys = document.querySelectorAll('.key');
 let intentos = 6;
-
+//boton atras
+document.getElementById('back').addEventListener('click', ()=>{
+    window.location.href = "../index.html"
+})
 
 campos.forEach((campo, index) => {
     campo.addEventListener('input', (event) => {

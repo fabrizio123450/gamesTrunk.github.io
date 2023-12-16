@@ -7,12 +7,15 @@ body {
     background-color: #161615f0;
 }
 
-h1,h2,h3 {
+h1,
+h2,
+h3 {
     font-weight: lighter;
     text-align: center;
     color: white;
     margin-top: 5px;
 }
+
 /*JUEGO*/
 #guess-input {
     display: block;
@@ -28,13 +31,13 @@ h1,h2,h3 {
     display: none;
     margin: 0 auto;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
     font-size: 40px;
     background-color: transparent;
     color: white;
     border: none;
     cursor: pointer;
-    
+
 }
 
 button:active {
@@ -52,7 +55,7 @@ button:active {
 
 .row {
     margin: 0;
-    
+
 }
 
 .input-area {
@@ -66,14 +69,16 @@ button:active {
     justify-content: center;
 }
 
-.campo, span {
+.campo,
+span {
     background-color: transparent;
     font-size: 30px;
     width: 40px;
     height: 40px;
     margin: 1px;
     text-align: center;
-    text-transform:uppercase; /*TEXTO SIEMPRE MAYUS*/
+    text-transform: uppercase;
+    /*TEXTO SIEMPRE MAYUS*/
     border-radius: 5px;
     border: 1px solid black;
     color: white;
@@ -94,7 +99,7 @@ button:active {
     background-color: transparent;
 }
 
-.key{
+.key {
     color: white;
     width: 40px;
     height: 40px;
@@ -106,13 +111,14 @@ button:active {
 /****************************************************/
 /* MODAL */
 
-#openModalBtn {
+#openModalBtn,
+#back {
     font-family: 'Helvetica Neue LT Pro', sans-serif;
     display: flex;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
     width: 40px;
-    height: 40px; 
+    height: 40px;
     border-radius: 50%;
     background-color: transparent;
     color: #fff;
