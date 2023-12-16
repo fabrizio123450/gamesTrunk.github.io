@@ -2,6 +2,7 @@
 let botonJuego1 = document.getElementById("game1");
 let botonJuego2 = document.getElementById("game2");
 let botonJuego3 = document.getElementById("game3");
+let botonJuego4 = document.getElementById("game4");
 
 /**
  * repo juego 1
@@ -17,4 +18,7 @@ botonJuego2.addEventListener("click", function() {
 });
 botonJuego3.addEventListener("click", function() {
     window.location.href = "wordle/index.html";
+});
+botonJuego4.addEventListener("click", function() {
+    window.location.href = "mi juego tateti/index.html";
 });

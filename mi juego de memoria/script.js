@@ -127,6 +127,33 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(cartascoinciden, 500)//te muesta medio segundo luego de que coincidan
         }
     }
+//Para volver a la pagina anterior
+const botonVolver = document.getElementById("volver");
+botonVolver.addEventListener ('click', () => {
+    window.location.href = '../index.html';
+    });
+
+//Para instrucciones abre una caja con ellas 
+const Instrucciones = document.getElementById('Instrucciones');
+const instruccion = document.getElementById('cajainstrucciones');
+const cerrarpasos = document.querySelector('.cerrar');
+//cuando se hace click
+Instrucciones.addEventListener('click', () => {
+    instruccion.style.display = 'block';
+    clearInterval(intervaloid)
+    
+});
+//para cerrar
+cerrarpasos.addEventListener('click', () => {
+    instruccion.style.display = 'none';
+    intervaloid = setInterval(actualizarPuntaje, 1000);
+});
+//para cerrar cuando se hace click fuera de la caja
+window.addEventListener('click', (event) => {
+    if (event.target === instruccion) {
+        instruccion.style.display = 'none';
+    }
+});
 
     crearmazo()//empieza el juego creando el mazo
 })

@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <title>Juego de memoria</title>
     <link rel="stylesheet" href="style.css">
-    </link>
     <script src="script.js" charset="utf-8"></script>
 </head>
 <body>
@@ -19,10 +18,20 @@
     <div class="grid">
 
     </div>
-    <audio controls>
-        <source src="audio(1).mp3" type="audio/mp3">
-        Tu navegador no soporta la etiqueta de audio.
-    </audio>
+    <button id="volver">⇦Volver</button>
+
+    <button id="Instrucciones">?</button>
+    <div id="cajainstrucciones" class="instruccion">
+    <div class="pasos-instrucciones">
+      <span class="cerrar">&times;</span>
+      <h2>Instrucciones: </h2>
+      <p>-Usted puede girar dos cartas por vez haciendo click en dos lugares del mazo</p>
+      <p>-Cuando selecione dos cartas iguales estan van a desaparecer del mazo</p>
+      <p>-Tiene un minuto para hacer desaparecer todo el mazo</p>
+      <p>-Para ello tendra que recordar los lugares donde se encontraban cada carta</p>
+      <p>-Perdera si no logra hacer desaparecer el mazo en 1 minuto</p>
+    </div>
+  </div>
 </body>
 
 </html>
